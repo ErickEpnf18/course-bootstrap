@@ -1,0 +1,104 @@
+/*@import url(https://fonts.googleapis.com/css?family=Mukta);
+/*
+html {
+  background: #30333a;
+  min-height: 100%;
+}
+*/
+body {
+  font-family: 'Roboto Slab', Arial, 'Segoe UI', Tahoma, sans-serif;
+  font-size: 16px;
+  padding: 0;
+  margin: 0 auto;
+  font-weight: 400;
+  background-color: #141414;
+}
+
+.list {
+  padding: 100px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /*This is counter of list*/
+  counter-reset: list;
+  &.active {
+    li {
+      a {
+        color: transparent;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
+
+  li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 64px;
+    transition: 0.3s;
+    &:last-child {
+      margin: 0;
+    }
+
+    &:hover {
+      padding-left: 24px;
+      a {
+        color: #fff;
+        text-shadow: none;
+      }
+    }
+
+    &:before {
+      /*This is counter of list*/
+      counter-increment: list;
+      content: counter(list) '.';
+      display: block;
+      font-weight: 700;
+      font-size: 20px;
+      color: rgba(141, 141, 141);
+      margin-right: 32px;
+    }
+
+    a {
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 33px;
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .photo {
+      position: absolute;
+      overflow: hidden;
+      width: 400px;
+      height: 250px;
+      border-radius: 8px;
+      z-index: 100;
+      visibility: hidden;
+      transform: scale(0.6);
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+      &.active {
+        visibility: visible;
+        transform: scale(1);
+        opacity: 1;
+      }
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        max-width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
