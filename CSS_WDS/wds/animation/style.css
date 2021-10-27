@@ -1,0 +1,46 @@
+.parent {
+  background-color: hsla(200, 100%, 20%);
+  height: 400px;
+  width: 400px;
+}
+.child {
+  background-color: red;
+  height: 50%;
+  width: 50%;
+  /*transition properties:
+  ease-in-out, line
+  
+  */
+  /*the two times it's when 1 started 2- ended the animation*/
+  /*transition: transform 1500ms ease-in-out 1s;*/
+
+  animation: left-to-right 1s ease-in forwards infinite alternate;
+}
+/*to put attention it's for the child only*/
+.parent:hover .child {
+  /*
+  background-color: green;
+  transform: translateX(100%);
+  */
+  /*the twree it's to 3 times the animation
+    alternate: return to the same direction such as if to return again
+  */
+  /*animation: left-to-right 1s ease-in forwards 3 alternate;*/
+
+  /*paused animation*/
+  animation-play-state: paused;
+}
+@keyframes left-to-right {
+  0% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateY(100%);
+  }
+  66% {
+    transform: translateX(100%) translateY(100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
