@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="selectors.cssss" />
+    <title>Selectors in CSS</title>
+
+    <style>
+      div.red.green-text {
+        background: blue;
+        color: green;
+      }
+      /* no count from the class pink  */
+      /* li.pink ~ li {
+        background: pink;
+      } */
+      /* no count from the class pink  only + 1*/
+      /* li.pink + li {
+        background: violet;
+      } */
+      /*
+      span,
+      li.red {
+        background: pink;
+      }
+      */
+      /* child of child */
+      div b {
+        background: red;
+      }
+      /* direct child of div */
+      div > b {
+        background: pink;
+      }
+      /* pseudoelements */
+      li:focus {
+        background: green;
+      }
+      /*
+      input:focus {
+        background: yellow;
+      }
+      */
+      /* with named(required) in input */
+      input:required {
+        background: red;
+      }
+      /* only when I checked the checkbox */
+      /* input.checkbox:checked {
+        margin: 50px;
+      } */
+      /* to disabled and choice with named(disabled) */
+      input.checkbox:disabled {
+        margin: 50px;
+      }
+      /* first-of-child */
+      li:first-child {
+        background: yellowgreen;
+      }
+      /* li:last-child {
+        background: yellowgreen;
+      } */
+      li:nth-child(3) {
+        background: blueviolet;
+      }
+      /* jump 1 position from the last child */
+      li:nth-last-child(2n - 1) {
+        background: yellow;
+      }
+      /* span:only-child {
+        background: gray;
+      } */
+      li:first-of-type {
+        background: black;
+      }
+      li:last-of-type {
+        background: black;
+      }
+      /* every selector */
+      /* span:only-of-type {
+        background: black;
+      } */
+      /* useful to select not class */
+      li:not(.pink) {
+        background: blueviolet;
+      }
+      /* it's useful to validate values of bool */
+      [super-div='true'] {
+        background: lightseagreen;
+      }
+      /* startin with the first letters */
+      [super-div-string-1^='123'] {
+        background: lightseagreen;
+      }
+      /* ending with the letters */
+      [super-div-string-2$='2'] {
+        background: lightseagreen;
+      }
+      /* in the middle is equal with 45 */
+      [super-div-string-3*='45'] {
+        background: lightseagreen;
+      }
+    </style>
+  </head>
+  <body>
+    <input required type="text" />
+    <br />
+
+    <input type="checkbox" class="checkbox" disabled />
+    <!-- I have to put in a div because won't validate -->
+    <div>
+      <span>This is a span</span>
+    </div>
+    <div>this is a div</div>
+    <div class="red green-text">this is a div</div>
+    <span id="blue">This is a span</span>
+    <div super-div="false">super div</div>
+    <div super-div-string-1="12345">super div</div>
+    <div super-div-string-2="432">super div</div>
+    <div super-div-string-3="434511112222123112">super div</div>
+    <div>
+      <b>nested text</b>
+      <span>
+        <b>nested text</b>
+      </span>
+    </div>
+    <ul>
+      <li class="red">Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li class="pink">Item 4</li>
+      <li>Item 5</li>
+      <li>Item 6</li>
+      <li>Item 7</li>
+      <li>Item 8</li>
+      <li>Item 9</li>
+      <li>Item 10</li>
+      <li>Item 11</li>
+      <li>Item 12</li>
+      <span>This is a span</span>
+    </ul>
+  </body>
+</html>
