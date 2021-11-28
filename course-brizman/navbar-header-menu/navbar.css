@@ -106,7 +106,7 @@ body {
   transition: color 0.3s;
   cursor: pointer;
 }
-.nav_items:hover {
+.nav_item:hover {
   color: #1539cf;
 }
 .nav_item-text {
